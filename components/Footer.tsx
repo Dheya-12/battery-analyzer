@@ -70,8 +70,8 @@ export default function Footer() {
           className="mb-16"
         >
           <p className="text-lg text-gray-400">
-            Built by{' '}
-            <span className="text-gray-300 font-semibold">Dheya Algalham</span>
+            Built by:{' '}
+            <span className="text-gray-300 font-semibold">Team 8</span>
           </p>
         </motion.div>
 

@@ -32,7 +32,7 @@ export default function CTASection() {
               Get instant safety classification with our AI-powered detection system
             </p>
 
-            <Link href="/analyze">
+            <Link href="/analysis">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
