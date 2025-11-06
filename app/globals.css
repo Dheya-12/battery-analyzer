@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+body {
+  background-color: #0a0a0f;
+  color: white;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, rgb(96 165 250), rgb(192 132 252));
+}
+
+.glass {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+
+/* 3D Text Effect */
+.text-3d {
+  color: #000000;
+  text-shadow:
+    1px 1px 0 rgba(60, 60, 60, 1),
+    2px 2px 0 rgba(55, 55, 55, 1),
+    3px 3px 0 rgba(50, 50, 50, 1),
+    4px 4px 0 rgba(45, 45, 45, 1),
+    5px 5px 0 rgba(40, 40, 40, 1),
+    6px 6px 0 rgba(35, 35, 35, 1),
+    7px 7px 0 rgba(30, 30, 30, 1),
+    8px 8px 0 rgba(25, 25, 25, 1),
+    9px 9px 0 rgba(20, 20, 20, 1),
+    10px 10px 0 rgba(15, 15, 15, 1),
+    11px 11px 0 rgba(10, 10, 10, 1),
+    12px 12px 0 rgba(5, 5, 5, 1),
+    13px 13px 0 rgba(0, 0, 0, 1),
+    14px 14px 0 rgba(0, 0, 0, 1),
+    15px 15px 0 rgba(0, 0, 0, 1),
+    16px 16px 0 rgba(0, 0, 0, 1),
+    17px 17px 0 rgba(0, 0, 0, 1),
+    18px 18px 0 rgba(0, 0, 0, 1),
+    19px 19px 0 rgba(0, 0, 0, 1),
+    20px 20px 0 rgba(0, 0, 0, 1),
+    21px 21px 0 rgba(0, 0, 0, 1),
+    22px 22px 0 rgba(0, 0, 0, 1),
+    23px 23px 0 rgba(0, 0, 0, 1),
+    24px 24px 0 rgba(0, 0, 0, 1),
+    25px 25px 0 rgba(0, 0, 0, 1);
+}
+
+.text-3d-glow {
+  filter:
+    drop-shadow(0 0 15px rgba(59, 130, 246, 0.5))
+    drop-shadow(0 0 30px rgba(168, 85, 247, 0.4))
+    drop-shadow(0 0 45px rgba(6, 182, 212, 0.3));
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 15px rgba(59, 130, 246, 0.5))
+      drop-shadow(0 0 30px rgba(168, 85, 247, 0.4))
+      drop-shadow(0 0 45px rgba(6, 182, 212, 0.3));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 20px rgba(59, 130, 246, 0.7))
+      drop-shadow(0 0 40px rgba(168, 85, 247, 0.5))
+      drop-shadow(0 0 60px rgba(6, 182, 212, 0.4));
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
