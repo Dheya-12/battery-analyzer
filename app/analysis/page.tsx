@@ -5,19 +5,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Upload, X, AlertTriangle, CheckCircle2, ArrowLeft, Activity, TrendingUp, Shield } from 'lucide-react';
 import Link from 'next/link';
 
-interface PredictionResult {
+interface PredictionSuccess {
   prediction: 'BULGING' | 'REGULAR';
   confidence: number;
   rawScore: number;
   risk: 'LOW' | 'MEDIUM' | 'HIGH';
 }
 
+interface PredictionError {
+  error: string;
+}
+
+type PredictionResult = PredictionSuccess | PredictionError;
+
 export default function AnalysisPage() {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState<PredictionResult | null>(null);
+  const [result, setResult] = useState<PredictionSuccess | null>(null);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -85,7 +91,7 @@ export default function AnalysisPage() {
 
       const data: PredictionResult = await response.json();
 
-      if (data.error) {
+      if ('error' in data) {
         throw new Error(data.error);
       }
 

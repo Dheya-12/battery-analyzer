@@ -5,7 +5,8 @@
       "Bash(npm install:*)",
       "Bash(python convert_model.py:*)",
       "Bash(pip install:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
