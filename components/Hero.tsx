@@ -39,7 +39,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-white"
             >
-              AI-Powered Battery
+              
               <br />
               Safety Detection
             </motion.h1>
