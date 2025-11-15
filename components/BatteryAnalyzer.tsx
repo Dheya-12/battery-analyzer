@@ -8,7 +8,6 @@ interface PredictionResult {
   prediction: 'BULGING' | 'REGULAR';
   confidence: number;
   rawScore: number;
-  risk: 'LOW' | 'MEDIUM' | 'HIGH';
 }
 
 export default function BatteryAnalyzer() {
@@ -102,15 +101,6 @@ export default function BatteryAnalyzer() {
     setError(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
-    }
-  };
-
-  const getRiskColor = (risk: string) => {
-    switch (risk) {
-      case 'HIGH': return 'from-red-500 to-red-600';
-      case 'MEDIUM': return 'from-yellow-500 to-orange-500';
-      case 'LOW': return 'from-green-500 to-emerald-500';
-      default: return 'from-gray-500 to-gray-600';
     }
   };
 
@@ -350,21 +340,6 @@ export default function BatteryAnalyzer() {
                           transition={{ duration: 1, ease: 'easeOut' }}
                           className={`h-full bg-gradient-to-r ${getPredictionColor(result.prediction)}`}
                         />
-                      </div>
-                    </div>
-
-                    {/* Risk Level */}
-                    <div className="glass rounded-2xl p-6">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-300 font-medium">Risk Level</span>
-                        <motion.span
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ delay: 0.3, type: 'spring' }}
-                          className={`px-4 py-2 rounded-lg bg-gradient-to-r ${getRiskColor(result.risk)} text-white font-bold text-lg`}
-                        >
-                          {result.risk}
-                        </motion.span>
                       </div>
                     </div>
 

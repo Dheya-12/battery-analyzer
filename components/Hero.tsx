@@ -282,7 +282,7 @@ export default function Hero() {
                 </div>
 
                 {/* Outer Glow Ring */}
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 blur-3xl -z-10 opacity-60" />
+                <div className="absolute -inset-4 rounded-3xl bg-linear-to-br from-blue-600/20 to-purple-600/20 blur-3xl -z-10 opacity-60" />
               </div>
 
               {/* Floating Info Badges - Repositioned to overlap frame */}
