@@ -40,5 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-python_backend/battery_model/
+
 python_backend/*.h5
